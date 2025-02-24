@@ -1,0 +1,17 @@
+/* Selector{
+    Property: Value;
+} */
+
+h2 {
+    color: blue;
+}
+
+p {
+    color: pink;
+}
+body {
+    background-color: aliceblue;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 10px;
+}

@@ -1,0 +1,169 @@
+body{
+    background-color: #fdf3dd;
+}
+.title-container {
+    display: flex;
+    height: 30vh;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+    margin: 0em 2.1em 0em 2.1em;}
+
+.title {
+    font-family: "Marcellus", serif;
+    font-size: 4em;
+    letter-spacing: 0.3em;
+    color: #373d3b;
+    align-items: flex-start; 
+    text-align: left;
+}
+
+.subtitle {
+    font-family: "Marcellus", serif;
+    font-size: 3em;
+    color: #7d0600;
+    text-align: right;
+}
+
+@media (max-width: 900px) {
+    .title-container {
+        flex-direction: column; /* Stack title and subtitle vertically */
+        align-items: center; /* Center-align both elements */
+        height: auto;
+        margin: 1em 2.1em; /* Adjust margins */
+    }
+
+    .title {
+        text-align: center; /* Center-align title */
+        font-size: 3em; /* Slightly smaller font size */
+    }
+
+    .subtitle {
+        text-align: center; /* Center-align subtitle */
+        font-size: 2.5em; /* Slightly smaller font size */
+        margin-top: 0.3em; /* Add spacing below title */
+    }
+}
+
+
+.body-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: start;
+}
+
+.about-container {
+    display: flex;
+    border-radius: 28px;
+    padding: 2em;
+    margin: 2em;
+    background-color: #fa74a0;
+    width: 40VW;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 20vw;
+    margin-bottom: 1em;
+}
+
+@media (max-width: 900px) {
+    .about-container {
+        width: 90vw; /* Adjust width to take up full width */
+        margin: 1em; /* Adjust margin */
+    }
+
+    .avatar {
+        width: 40vw; /* Adjust avatar size */
+    }
+}
+
+.aboutme-heading {
+    font-family: "Marcellus", serif;
+    font-size: 3em;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #39252c;
+    align-items: flex-start; 
+}
+
+.aboutme {
+    font-family: "Verdana", sans-serif;
+    line-height: 1.5em;
+    font-size: 1.2em;
+    color: #39252c;
+}
+
+.cards-container a:nth-child(1) { grid-area: card1; }
+.cards-container a:nth-child(2) { grid-area: card2; }
+.cards-container a:nth-child(3) { grid-area: card3; }
+.cards-container a:nth-child(4) { grid-area: card4; }
+.cards-container a:nth-child(5) { grid-area: card5; }
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:
+        "card1 ."
+        ". card2"
+        "card3 ."
+        ". card4"
+        "card5 .";
+
+    gap: 5em;
+    padding: 1.5em;
+}
+
+.cards-container a {
+    display: block;
+    width: 100%;
+    min-width: 150px;
+    max-width: 300px;
+    transition: transform 0.7s ease, box-shadow 0.7s ease;
+
+}
+
+.cards-container a img {
+    box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.15); 
+    height: auto;
+    width: 100%;
+    border-radius: 28px;
+}
+
+.cards-container a:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 900px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "card1"
+            "card2"
+            "card3"
+            "card4"
+            "card5";
+        gap: 2em;
+        width: 90%;
+    }
+
+    .cards-container a {
+        max-width: 100%; /* Makes cards take up full width */
+    }
+}
+
+
+
+/* 
+px = pixels, absolute
+em = em times the container its in 
+rem = em times the root element 
+% = percentage of the container its in
+vh = viewport height
+vw = viewport width
+*/
