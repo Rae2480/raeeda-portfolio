@@ -1,13 +1,18 @@
 body{
     background-color: #fdf3dd;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
 }
+
 .title-container {
     display: flex;
     height: 30vh;
     flex-direction: row;
-    justify-content: space-between; 
+    justify-content: space-around; 
     align-items: center;
-    margin: 0em 2.1em 0em 2.1em;}
+    margin: 1em 2.1em 1.2em 2.1em;}
 
 .title {
     font-family: "Marcellus", serif;
@@ -18,11 +23,44 @@ body{
     text-align: left;
 }
 
+.avatar {
+    border-radius: 50%;
+    width: 280px;
+    margin-top: 1.2em;
+    margin-bottom: 1em;
+}
+
+.subtitle-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    margin: 1em 2.1em 1.2em 2.1em;
+}
+
 .subtitle {
     font-family: "Marcellus", serif;
     font-size: 3em;
     color: #7d0600;
     text-align: right;
+    margin-bottom: 0.5em;
+}
+
+.social-icons {
+    display: block ;
+}
+
+.social-icons a {
+    font-size: 2em; /* Adjust icon size */
+    color: #7d0600; /* Default color */
+    transition: transform 0.3s ease, color 0.3s ease;
+    padding: 0.25em;
+
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: #fa74a0; /* Change color on hover */
 }
 
 @media (max-width: 900px) {
@@ -30,18 +68,39 @@ body{
         flex-direction: column; /* Stack title and subtitle vertically */
         align-items: center; /* Center-align both elements */
         height: auto;
-        margin: 1em 2.1em; /* Adjust margins */
+        margin: -1em 2.1em -1em; /* Adjust margins */
     }
 
     .title {
         text-align: center; /* Center-align title */
         font-size: 3em; /* Slightly smaller font size */
+        margin-top: 0em; /* Adjust margin */
+    }
+
+    .avatar {
+        width: 40vw; /* Adjust avatar size */
+        margin-top: -2em; /* Adjust margin */
     }
 
     .subtitle {
         text-align: center; /* Center-align subtitle */
         font-size: 2.5em; /* Slightly smaller font size */
-        margin-top: 0.3em; /* Add spacing below title */
+        margin: 0em;
+    }
+
+    .subtitle-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 1em 2.1em 1.2em 2.1em;
+    }
+
+    .social-icons {
+        text-align: center; /* Center-align social icons */
+    }
+    .social-icons a {
+        display: inline-block; /* Ensure icons are displayed inline for centering */
     }
 }
 
@@ -49,36 +108,21 @@ body{
 .body-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between; 
+    justify-content: space-around; 
     align-items: start;
+    margin: 3.5em 0em;
 }
 
 .about-container {
     display: flex;
     border-radius: 28px;
-    padding: 2em;
-    margin: 2em;
+    padding: 3.5em;
+    margin: 0em 2em;
     background-color: #fa74a0;
     width: 40VW;
     flex-direction: column;
     align-items: center;
-}
-
-.avatar {
-    border-radius: 50%;
-    width: 20vw;
-    margin-bottom: 1em;
-}
-
-@media (max-width: 900px) {
-    .about-container {
-        width: 90vw; /* Adjust width to take up full width */
-        margin: 1em; /* Adjust margin */
-    }
-
-    .avatar {
-        width: 40vw; /* Adjust avatar size */
-    }
+    box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.15); 
 }
 
 .aboutme-heading {
@@ -87,14 +131,37 @@ body{
     text-align: center;
     letter-spacing: 0.1em;
     color: #39252c;
+    margin-top: 0em;
     align-items: flex-start; 
 }
 
 .aboutme {
     font-family: "Verdana", sans-serif;
-    line-height: 1.5em;
-    font-size: 1.2em;
+    text-align: justify;
+    line-height: 2em;
+    font-size: 1.35em;
     color: #39252c;
+}
+
+@media (max-width: 900px) {
+    .body-container {
+        margin: 0.2em; /* Adjust margin */
+    }
+    .about-container {
+        width: 90vw; /* Adjust width to take up full width */
+        padding: 1.5em; /* Adjust padding */
+        margin: 0em 0em 0em 2em; /* Adjust margin */
+
+    }
+
+    .aboutme-heading {
+        font-size: 2em; /* Slightly smaller font size */
+    }
+
+    .aboutme {
+        font-size: 1em; /* Slightly smaller font size */
+        text-align: left;
+    }
 }
 
 .cards-container a:nth-child(1) { grid-area: card1; }
@@ -115,7 +182,13 @@ body{
         "card5 .";
 
     gap: 5em;
-    padding: 1.5em;
+    padding: 0em 1.5em;
+    margin: 0em 2em;
+
+}
+
+.cards-container a:nth-child(n+2) {
+    margin-top: -12.5em; /* Move all cards from 2 to 5 upwards */
 }
 
 .cards-container a {
@@ -123,7 +196,7 @@ body{
     width: 100%;
     min-width: 150px;
     max-width: 300px;
-    transition: transform 0.7s ease, box-shadow 0.7s ease;
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
 
 }
 
@@ -134,9 +207,9 @@ body{
     border-radius: 28px;
 }
 
-.cards-container a:hover img {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+.cards-container a img:hover {
+    transform: scale(1.01);
+    box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.25); 
 }
 
 @media (max-width: 900px) {
@@ -148,12 +221,16 @@ body{
             "card3"
             "card4"
             "card5";
-        gap: 2em;
+        gap: 3em;
         width: 90%;
     }
 
     .cards-container a {
         max-width: 100%; /* Makes cards take up full width */
+    }
+
+    .cards-container a:nth-child(n+2) {
+        margin-top: 0; /* Remove top margin from all cards */
     }
 }
 

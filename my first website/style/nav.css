@@ -1,0 +1,76 @@
+/* Hide checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Style the menu button */
+.menu-icon {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: #fdf3dd;
+    padding: 1em;
+}
+
+/* Default desktop menu */
+.topnav {
+    background-color: #7d0600;
+    font-family: "Marcellus", serif;
+    font-size: 1.5em;
+    overflow: visible;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1em 2em;
+    margin-bottom: 2em;
+}
+
+/* Mobile styles */
+@media (max-width: 1000px) {
+    .menu-icon {
+        color: #7d0600;
+        display: block; /* Show the menu icon */
+        padding: 0.5em 1em;
+    }
+
+    .menu-icon:hover {
+        color: #fa74a0;
+    }
+
+    .topnav {
+        display: none; /* Hide menu by default */
+        flex-direction: column;;
+        top: 4em;
+        left: 0;
+        width: 100%;
+        background-color: #7d0600;
+        text-align: center;
+        padding: 1em 0;
+        color: darkred;
+    }
+
+    /* Show menu when checkbox is checked */
+    #menu-toggle:checked ~ .topnav {
+        display: flex;
+    }
+}
+
+
+a {
+    color: #fdf3dd;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffb422;
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #7d0600;
+    color: #fdf3dd;
+    text-align: center;
+    padding: 1em;
+    font-size: 1em;
+    font-family: "Marcellus", serif;
+}
