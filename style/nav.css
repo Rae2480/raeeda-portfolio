@@ -1,0 +1,96 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Marcellus", serif;
+    background-color: #fdf3dd;
+    color: #7d0600;
+    width: 100%;
+    max-width: none;
+}
+/* Hide checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Style the menu button */
+.menu-icon {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: #fdf3dd;
+    padding: 1em;
+}
+
+/* Default desktop menu */
+.topnav {
+    background-color: #7d0600;
+    font-family: "Marcellus", serif;
+    font-size: 1em;
+    overflow: visible;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1em 15em 1.5em ;
+    margin-bottom: 1.5em;
+}
+
+/* Mobile styles */
+@media (max-width: 1000px) {
+    .menu-icon {
+        color: #7d0600;
+        display: block; /* Show the menu icon */
+        padding: 0.5em 1em;
+    }
+
+    .menu-icon:hover {
+        color: #fa74a0;
+    }
+
+    .topnav {
+        display: none; /* Hide menu by default */
+        flex-direction: column;;
+        top: 4em;
+        left: 0;
+        width: 100%;
+        background-color: #7d0600;
+        text-align: center;
+        padding: 1em 0;
+        color: darkred;
+    }
+
+    /* Show menu when checkbox is checked */
+    #menu-toggle:checked ~ .topnav {
+        display: flex;
+    }
+}
+
+
+a {
+    color: #fdf3dd;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffb422;
+    box-shadow: 0em 0em 2em 0em, #ffb422;
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #7d0600;
+    color: #fdf3dd;
+    text-align: center;
+    padding: 1em;
+    font-size: 1em;
+    font-family: "Marcellus", serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    flex: 1;
+}

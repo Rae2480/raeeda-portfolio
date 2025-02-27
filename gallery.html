@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+        <link rel="stylesheet" type="text/css" href="style/nav.css">
+        <link rel="stylesheet" type="text/css" href="style/gallery.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/ed25ae06d4.js" crossorigin="anonymous"></script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        .swiper-button-prev {
+            color: black;
+            left: 15%;
+            width: 50px;
+        }
+
+        .swiper-button-next {
+            color: black;
+            right: 15%;
+            width: 50px;
+        }
+
+        text {
+            font-family: 'Marcellus', serif;
+            font-weight: bold;
+            color: #39252c;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container" >
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <nav class="topnav">
+            <a href="index.html">home</a>
+            <a href="about.html">about</a>
+            <a href="gallery.html">gallery</a>
+            <a href="resume.html">resume</a>
+            <a href="connect.html">connect</a>
+        </nav>
+    </div>
+    <!-- Slider main container -->
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <div class="viktor-container">
+                    <h2>Viktor</h2>
+                    <div class="viktor-images">
+                        <img src="resources/viktorui.png" alt="viktorui" class="ui-image">
+                        <div class="viktor-code">
+                            <img src="resources/viktorcode1.png" alt="viktorcode">
+                            <img src="resources/viktorcode2.png" alt="viktorcode">
+                            <img src="resources/viktorcode3.png" alt="viktorcode">
+                        </div>
+                        <div class = "viktordescription">
+                            <span>Viktor: A Smart and Efficient Task Management Assistant</span>
+                            <br><br>
+                            Viktor is a task-manager chatbot built in Java, inspired by the hit Netflix show Arcane's Viktor. 
+                            It features persistent storage, and boasts a structured object-oriented design, making it both 
+                            scalable and maintainable. Viktor leverages Gradle for dependency management and testing, ensuring 
+                            smooth builds and integration. A JavaFX graphical user interface further enhances user interaction.
+                            <br><br>
+                            Viktor isn't just a task manager—it’s an evolving project that reflects both efficiency and innovation!
+                        </div>
+                    </div>
+                    <iframe src="https://nus-cs2103-ay2425s2.github.io/ip-dashboard/#/widget/?search=&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=java~md~fxml~sh~bat~gradle~txt&since=2025-01-10&tabOpen=true&tabType=authorship&tabAuthor=Rae2480&tabRepo=Rae2480%2Fip%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=java~md~fxml~sh~bat~gradle~txt&authorshipIsBinaryFileTypeChecked=false&authorshipIsIgnoredFilesChecked=false&chartGroupIndex=300&chartIndex=0" frameBorder="0" width="800px" height="142px"></iframe>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="coming-soon-card">
+                    <h2>Coming Soon</h2>
+                    <p>Stay tuned for upcoming projects!</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="coming-soon-card">
+                    <h2>Coming Soon</h2>
+                    <p>Exciting updates are on the way!</p>
+                </div>
+            </div>
+        </div>
+        <!-- Navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="gallery1.js"></script>
+
+    <footer>
+        <p>© 2025 Raeeda Ibnat Hossain. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

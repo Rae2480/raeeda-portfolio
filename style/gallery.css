@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+    min-height: 100vh;
+}
+
+.viktor-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50vw; /* Reduce the width to make it smaller */
+    max-width: 700px; /* Prevent it from growing too large */
+    background-color: #fdf3dd;
+    padding: 15px; /* Reduce padding to shrink overall size */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+.viktor-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.viktor-images img {
+    width: 150px; /* Reduce image size */
+    height: auto; /* Keep aspect ratio */
+}
+
+.viktor-code {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 90px; 
+    gap: 18%;
+    height: auto;
+}
+
+.viktordescription {
+    font-size: 0.9rem; /* Reduce font size */
+    padding: 2em;
+    text-wrap: wrap;
+    max-width: 400px;
+    text-align: center;
+}
+
+iframe {
+    width: 90%; /* Scale iframe down */
+    height: 200px; /* Reduce height */
+    border: none;
+    margin-top: 15px;
+}
+
+
+.coming-soon-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50vw; /* Match Viktor's width */
+    max-width: 700px; /* Prevent it from being too large */
+    background-color: #fdf3dd;
+    padding: 15px; /* Reduce padding to match Viktor */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: auto; /* Centering */
+    height: 72vh; /* Adjust height as needed */
+}
+
+body {
+	background: linear-gradient(-45deg, #caaacd, #adcfeb, #cfb683, #acdbc5, #ffbed4);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+    overflow: hidden;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interactive Scrapbook</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/nav.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ed25ae06d4.js" crossorigin="anonymous"></script>
+    <style>
+      /* Global layout: two columns using Flexbox */
+      .container {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        height: 80vh;
+      }
+      
+      /* Left text box (scrollable) */
+      .text-box {
+        width: 300px;
+        background: #fdf3dd;
+        border-right: 1px solid #ccc;
+        overflow-y: auto;
+        padding: 10px;
+      }
+      .text-box h2 {
+        margin-top: 0;
+      }
+      .text-box p {
+        margin: 0 0 10px;
+        padding: 5px;
+        background: #fff;
+        border: 1px solid #ddd;
+      }
+      
+      /* Right canvas area */
+      .canvas {
+        background-image: url('resources/canvas.png');  /* Set the background image */
+        background-size: cover; /* This ensures the image covers the container while maintaining its aspect ratio */
+        background-position: center; /* This centers the image within the container */
+        background-repeat: no-repeat;
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+      }
+      /* All images added to the canvas */
+      .canvas img {
+        position: absolute;
+        max-width: 200px;
+        max-height: 200px;
+        width: auto;
+        height: auto;
+        pointer-events: none; /* Allow clicks to pass through images */
+      }
+    </style>
+    </head>
+    <body>
+        <div class="menu-container" >
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <nav class="topnav">
+                <a href="index.html">home</a>
+                <a href="about.html">about</a>
+                <a href="gallery.html">gallery</a>
+                <a href="resume.html">resume</a>
+                <a href="connect.html">connect</a>
+            </nav>
+        </div>
+        <main>
+          <div class="container">
+          <div class="text-box" id="textBox">
+            <h2>Scrapbook</h2>
+            <h4>Click anywhere on the canvas to make a scrapbook with me!</h4>
+          </div>
+          <div class="canvas" id="canvas">
+          </div>
+        </main>
+        
+        
+        <script>
+            const canvas = document.getElementById('canvas');
+            const textBox = document.getElementById('textBox');
+            let imageCount = 0;
+            
+            // Array of scrapbook items (update with your actual image file names and texts)
+            const scrapbookItems = [
+            { src: "resources/scrapbook/blackcat.png", text: "I have a soft spot for cats, especailly black cats. If I see one, I always stop to say hello." },
+            { src: "resources/scrapbook/book.png", text: "Books have always been my escape. From classic literature to fantasy, I will read it all. Top favourites are: The Hunger Games, Emma and Little Women" },
+            { src: "resources/scrapbook/books.png", text: "My most favourite book ever is a bit embarrasing, but it's the one I've read at least twice a year. I won't say right now but please ask me more about it!" },
+            { src: "resources/scrapbook/butterfly.png", text: "I love scrapbooking for the way it helps us see the beauty in the smallest, most unexpected of things. Through this I wanted to share my love of scrapbooking with you!" },
+            { src: "resources/scrapbook/camera.png", text: "I love capturing little moments of my family and friends; laughter, sunlight, and the quiet details that make life worth living." },
+            { src: "resources/scrapbook/cat.png", text: "Cats are my comfort creatures. I love their independence, their quirks, and the way they make any place feel like home." },
+            { src: "resources/scrapbook/clam.png", text: "The ocean has always called to me. There's something calming about the waves, the life, and the endless blue horizon." },
+            { src: "resources/scrapbook/coffee1.png", text: "My mornings always start with coffee, and late nights end with it. A matcha latte or espresso is always my go-to!" },
+            { src: "resources/scrapbook/coffee2.png", text: "If I had all the money in the world, I'd probably attempt to try all the coffee shops all over the world." },
+            { src: "resources/scrapbook/db.png", text: "I really value fitness. Being active brings ith it the sense of accomplishment, and the freedom of movement." },
+            { src: "resources/scrapbook/dice.png", text: "I'm an optimist; I believe if we really want something, we have the capacity to strive towards it." },
+            { src: "resources/scrapbook/drums.png", text: "Recently, I've started learning the drums. I'm nowhere near good enough to perform, but it's incredibly fun nonetheless." },
+            { src: "resources/scrapbook/eiffel.png", text: "Recently, I've been learning French as some of my closest friends are from there. It's quite a beautiful language!" },
+            { src: "resources/scrapbook/fish.png", text: "Born on March 16, I'm actually a Pisces so I don't relate to most of what's said about us fishes." },
+            { src: "resources/scrapbook/flowers.png", text: "Pressed flowers in books, fresh blooms in a vase—I love the way flowers bring quiet beauty to life!" },
+            { src: "resources/scrapbook/gear.png", text: "One of my favourite shows right now is Arcane. It's got an incredible, powerful and character-driven storyline, aand the steampunk aesthetic is so cool!" },
+            { src: "resources/scrapbook/guitar.png", text: "I have been learning to play the electric guitar for a few years now!" },
+            { src: "resources/scrapbook/lily.png", text: "I was born in Bangladesh and like to visit every few years or so! It's a pretty country!" },
+            { src: "resources/scrapbook/mic.png", text: "Ever since I was a little girl, I've alwasy loved to sing!" },
+            { src: "resources/scrapbook/note.png", text: "Music has always been a part of my life! However, I still don't know how to read notes!" },
+            { src: "resources/scrapbook/paint.png", text: "I really enjoying digital art, and other forms of non-traditional art like scrapbooking, but also want to learn traditional art one day!" },
+            { src: "resources/scrapbook/pearl.png", text: "More than gems or anything of the sort, I can find endless beauty in pearls. They remind me that there's beauty in imperfection." },
+            { src: "resources/scrapbook/record.png", text: "Vinyl records hold nostalgia, and I'm a huge fan of the oldies especially of the rock genre." },
+            { src: "resources/scrapbook/saturn.png", text: "My very first dream when I was young was to be an astronaut." },
+            { src: "resources/scrapbook/ship.png", text: "My dad is a sailor and I spent over 5 years of my life sailing with him and my family. It was a life changing experience!" },
+            { src: "resources/scrapbook/stamp.png", text: "Stamps tell stories of places far and wide. One day, I want a collection full of my own travels." },
+            { src: "resources/scrapbook/star2.png", text: "I’ve always been drawn to the stars. There's something comforting about looking up and knowing they’ve always been there." },
+            { src: "resources/scrapbook/stars.png", text: "Maybe one day, I'll attempt to realise my dreams of being an astronaut!" },
+            { src: "resources/scrapbook/sun.png", text: "I love jewellery and aprkly trinkets and you'll probably always see me with infinitely many rings on my fingers!" },
+            { src: "resources/scrapbook/teddy.png", text: "I love cute things like teddy bears and cats!" },
+            { src: "resources/scrapbook/tix.png", text: "My biggest desire is travelling; I want to see all the world and all the wonderful things it has to offer!" },
+            { src: "resources/scrapbook/tulip.png", text: "Tulips are one of my favourite flowers, because I like bright, pretty, simple things!" },
+            { src: "resources/scrapbook/water.png", text: "I like to keep healthy and eating and drinking well is important to me!" }
+            ];
+
+            
+            canvas.addEventListener('click', function (event) {
+                const rect = canvas.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+
+                // Select a random scrapbook item
+                const randomItem = scrapbookItems[Math.floor(Math.random() * scrapbookItems.length)];
+
+                // Create a new image element and set its source
+                const img = document.createElement('img');
+                img.src = randomItem.src;
+                img.style.position = "absolute"; // Ensure absolute positioning
+
+                // Wait for image to fully load before positioning
+                img.onload = function () {
+                    const originalWidth = img.naturalWidth;
+                    const originalHeight = img.naturalHeight;
+                    const aspectRatio = originalWidth / originalHeight;
+
+                    // Set random size within a range 100px to 200px
+                    const randomSize = Math.floor(Math.random() * (200 - 100 + 1)) + 100;
+                    img.style.width = randomSize + 'px';
+                    img.style.height = (randomSize / aspectRatio) + 'px';
+
+                    // Convert width and height to numbers
+                    const imgWidth = parseFloat(img.style.width);
+                    const imgHeight = parseFloat(img.style.height);
+
+                    // Set correct position **only after loading**
+                    img.style.left = (x - imgWidth / 2) + 'px';
+                    img.style.top = (y - imgHeight / 2) + 'px';
+
+                    // Set random rotation (between -20 and 20 degrees)
+                    const randomRotation = Math.floor(Math.random() * 41) - 20;  // Random rotation between -20 and 20 degrees
+                    img.style.transform = `rotate(${randomRotation}deg)`;
+
+                    canvas.appendChild(img);
+                };
+                // Create accompanying text
+                const para = document.createElement('p');
+                para.textContent = `${randomItem.text}`;
+                // Insert new text below the header (prepending so previous text moves down)
+                textBox.insertBefore(para, textBox.children[2]);
+            });
+        </script>
+        <footer>
+          <p>© 2025 Raeeda Ibnat Hossain. All rights reserved.</p>
+      </footer>
+    </body>
+</html>
