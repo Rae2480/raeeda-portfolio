@@ -34,7 +34,7 @@ html, body {
 }
 
 /* Mobile styles */
-@media (max-width: 1000px) {
+@media (min-width:320px) {
     .menu-icon {
         font-size: 3rem;
         color: #7d0600;

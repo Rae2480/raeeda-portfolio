@@ -72,7 +72,8 @@ body{
     color: #fa74a0; /* Change color on hover */
 }
 
-@media (max-width: 1000px) {
+
+@media (min-width:320px) {
     .title-container {
         flex-direction: column; /* Stack title and subtitle vertically */
         align-items: center; /* Center-align both elements */
@@ -153,7 +154,7 @@ body{
     color: #39252c;
 }
 
-@media (max-width: 1000px) {
+@media (min-width:320px) {
     .body-container {
         margin: 0.2em; /* Adjust margin */
     }
@@ -224,7 +225,7 @@ body{
     box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.25); 
 }
 
-@media (max-width: 1000px) {
+@media (min-width:320px) {
     .cards-container {
         grid-template-columns: 1fr;
         grid-template-areas:
