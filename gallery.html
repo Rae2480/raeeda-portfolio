@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
         <link rel="stylesheet" type="text/css" href="style/style.css">
         <link rel="stylesheet" type="text/css" href="style/nav.css">
@@ -16,6 +14,10 @@
 
     <!-- Custom CSS -->
     <style>
+        html, body{
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
         .swiper-button-prev {
             color: black;
             left: 15%;
@@ -28,11 +30,16 @@
             width: 50px;
         }
 
-        text {
-            font-family: 'Marcellus', serif;
-            font-weight: bold;
-            color: #39252c;
+        p {
+            font: Marcellus, serif;
+            font-size: 1.5em;
         }
+
+        h2 {
+            font: Marcellus, serif;
+            font-size: 2.5em;
+        }
+
     </style>
 </head>
 <body>
@@ -55,25 +62,30 @@
             <div class="swiper-slide">
                 <div class="viktor-container">
                     <h2>Viktor</h2>
-                    <div class="viktor-images">
-                        <img src="resources/viktorui.png" alt="viktorui" class="ui-image">
-                        <div class="viktor-code">
-                            <img src="resources/viktorcode1.png" alt="viktorcode">
-                            <img src="resources/viktorcode2.png" alt="viktorcode">
-                            <img src="resources/viktorcode3.png" alt="viktorcode">
+                    <div class="viktor-info">
+                        <div class="viktor-images">
+                            <img src="resources/viktorui.png" alt="viktorui" class="ui-image">
+                            <div class="viktor-code">
+                                <img src="resources/viktorcode1.png" alt="viktorcode">
+                                <img src="resources/viktorcode2.png" alt="viktorcode">
+                                <img src="resources/viktorcode3.png" alt="viktorcode">
+                            </div>
                         </div>
                         <div class = "viktordescription">
-                            <span>Viktor: A Smart and Efficient Task Management Assistant</span>
-                            <br><br>
-                            Viktor is a task-manager chatbot built in Java, inspired by the hit Netflix show Arcane's Viktor. 
-                            It features persistent storage, and boasts a structured object-oriented design, making it both 
-                            scalable and maintainable. Viktor leverages Gradle for dependency management and testing, ensuring 
-                            smooth builds and integration. A JavaFX graphical user interface further enhances user interaction.
-                            <br><br>
-                            Viktor isn't just a task manager—it’s an evolving project that reflects both efficiency and innovation!
+                            <p>
+                                <span>Viktor: A Task Management Assistant</span>
+                                <br><br>
+                                Viktor is a task-manager chatbot built in Java, inspired by the hit Netflix show Arcane's Viktor. 
+                                It features persistent storage, and boasts a structured object-oriented design, making it both 
+                                scalable and maintainable. Viktor leverages Gradle for dependency management and testing, ensuring 
+                                smooth builds and integration. A JavaFX graphical user interface further enhances user interaction.
+                                <br><br>
+                                Viktor isn't just a task manager; it's an evolving project that reflects both efficiency and innovation!
+                            </p>
                         </div>
                     </div>
-                    <iframe src="https://nus-cs2103-ay2425s2.github.io/ip-dashboard/#/widget/?search=&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=java~md~fxml~sh~bat~gradle~txt&since=2025-01-10&tabOpen=true&tabType=authorship&tabAuthor=Rae2480&tabRepo=Rae2480%2Fip%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=java~md~fxml~sh~bat~gradle~txt&authorshipIsBinaryFileTypeChecked=false&authorshipIsIgnoredFilesChecked=false&chartGroupIndex=300&chartIndex=0" frameBorder="0" width="800px" height="142px"></iframe>
+                    <iframe src="https://nus-cs2103-ay2425s2.github.io/ip-dashboard/#/widget/?search=&sort=groupTitle&sortWithin=title&timeframe=commit&mergegroup=&groupSelect=groupByRepos&breakdown=true&checkedFileTypes=java~md~fxml~sh~bat~gradle~txt&since=2025-01-10&tabOpen=true&tabType=authorship&tabAuthor=Rae2480&tabRepo=Rae2480%2Fip%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=java~md~fxml~sh~bat~gradle~txt&authorshipIsBinaryFileTypeChecked=false&authorshipIsIgnoredFilesChecked=false&chartGroupIndex=300&chartIndex=0" 
+                    frameBorder="0" width="800px" height="142px"></iframe><br>
                 </div>
             </div>
             <div class="swiper-slide">
@@ -101,7 +113,7 @@
     <script src="gallery1.js"></script>
 
     <footer>
-        <p>© 2025 Raeeda Ibnat Hossain. All rights reserved.</p>
+        <p>&copy; 2025 Raeeda Ibnat Hossain. All rights reserved.</p>
     </footer>
 
 </body>

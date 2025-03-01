@@ -9,15 +9,35 @@
         <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/ed25ae06d4.js" crossorigin="anonymous"></script>
         <style>
-            iframe {
-                border: 2px solid white;
-                border-radius: 10px;
-                margin: 0 auto;
-                display: block
-            }
             h1 {
                 text-align: center;
+                font-family: 'Marcellus', serif;
+                font-size: 2.5rem;
             }
+
+            embed {
+                display: block;
+                margin: auto;
+            }
+
+            .download-button {
+                display: block;
+                width: 200px;
+                margin: 20px auto;
+                padding: 10px 20px;
+                background-color: #7d0600;
+                color: white;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 5px;
+                font-weight: bold;
+            }
+
+            .download-button:hover {
+                background-color: #ffbed4;
+                color: #7d0600;
+            }
+
         </style>
     </head>
     <body>
@@ -34,10 +54,12 @@
         </div>
         <main>
             <h1>Resume</h1>
-            <iframe src="resources/resume.pdf" width="50%" height="600px"></iframe>
+            <a href="resources/resume.pdf" download="Raeeda_Resume" class="download-button">Download My Resume</a>
+            <br>
+            <embed src="resources/resume.pdf" type="application/pdf">
         </main>
         <footer>
-            <p>© 2025 Raeeda Ibnat Hossain. All rights reserved.</p>
+            <p>&copy; 2025 Raeeda Ibnat Hossain. All rights reserved.</p>
         </footer>
     </body>
 </html>

@@ -72,17 +72,17 @@ body{
     color: #fa74a0; /* Change color on hover */
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .title-container {
         flex-direction: column; /* Stack title and subtitle vertically */
         align-items: center; /* Center-align both elements */
         height: auto;
-        margin: -1em 2.1em -1em; /* Adjust margins */
+        margin: 1em 2.1em -1em; /* Adjust margins */
     }
 
     .title {
         text-align: center; /* Center-align title */
-        font-size: 3em; /* Slightly smaller font size */
+        font-size: 5em; /* Slightly smaller font size */
         margin-top: 0em; /* Adjust margin */
     }
 
@@ -153,24 +153,25 @@ body{
     color: #39252c;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .body-container {
         margin: 0.2em; /* Adjust margin */
     }
     .about-container {
         width: 90vw; /* Adjust width to take up full width */
         padding: 1.5em; /* Adjust padding */
-        margin: 0em 0em 0em 2em; /* Adjust margin */
+        margin: 1.5em 0em 0em 2em; /* Adjust margin */
 
     }
 
     .aboutme-heading {
-        font-size: 2em; /* Slightly smaller font size */
+        font-size: 3rem; 
     }
 
     .aboutme {
-        font-size: 1em; /* Slightly smaller font size */
-        text-align: left;
+        font-size: 1.8em; /* Slightly smaller font size */
+        line-height: 1.5;
+        text-align: justify;
     }
 }
 
@@ -223,7 +224,7 @@ body{
     box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.25); 
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .cards-container {
         grid-template-columns: 1fr;
         grid-template-areas:

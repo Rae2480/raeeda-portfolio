@@ -1,10 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: gray;
-    min-height: 100vh;
-}
+
 
 .viktor-container {
     display: flex;
@@ -20,22 +14,31 @@ body {
     margin: auto;
 }
 
-.viktor-images {
+.viktor-info {
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-columns: 3fr 2fr;
     align-items: center;
     justify-content: center;
     
 }
 
+.viktor-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 .viktor-images img {
     width: 150px; /* Reduce image size */
     height: auto; /* Keep aspect ratio */
+
 }
 
 .viktor-code {
     display: flex;
     flex-direction: column;
+    ALIGN-ITEMS: anchor-center;
     justify-content: space-evenly;
     width: 90px; 
     gap: 18%;
@@ -47,7 +50,71 @@ body {
     padding: 2em;
     text-wrap: wrap;
     max-width: 400px;
-    text-align: center;
+    text-align: justify;
+}
+
+span {
+    font-weight: bold;
+}
+
+@media (max-width: 1000px) {
+    .viktor-container {
+        margin: auto;
+    }
+    
+    .viktor-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .viktor-images {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 5em;
+    }
+    .viktor-images img {
+        width: 150px; /* Reduce image size */
+        height: auto; /* Keep aspect ratio */
+    }
+    .viktor-code {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .viktor-code img {
+        width: 150px; /* Reduce image size */
+        height: auto; /* Keep aspect ratio */
+    }
+    .viktordescription {
+        font-size: 0.9rem; /* Reduce font size */
+        padding: 2em;
+        text-wrap: wrap;
+        max-width: 400px;
+        text-align: justify;
+    }
+    span {
+        font-weight: bold;
+    }
+
+    .coming-soon-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 50vw; /* Match Viktor's width */
+        max-width: 700px; /* Prevent it from being too large */
+        background-color: #fdf3dd;
+        padding: 15px; /* Reduce padding to match Viktor */
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin: auto; /* Centering */
+        height: 70vh; /* Adjust height as needed */
+    }
 }
 
 iframe {
@@ -56,6 +123,8 @@ iframe {
     border: none;
     margin-top: 15px;
 }
+
+
 
 
 .coming-soon-card {
@@ -75,21 +144,33 @@ iframe {
 }
 
 body {
-	background: linear-gradient(-45deg, #caaacd, #adcfeb, #cfb683, #acdbc5, #ffbed4);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-	height: 100vh;
-    overflow: hidden;
+    background: linear-gradient(-45deg, #caaacd, #adcfeb, #cfb683, #acdbc5, #ffbed4);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Ensures the body is at least the height of the viewport */
+    overflow-y: hidden;
 }
 
+/* Keyframes for gradient animation */
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Footer style to ensure it sticks to the bottom */
+footer {
+    margin-top: auto; /* Pushes the footer to the bottom */
+    padding: 20px;
+    text-align: center;
 }

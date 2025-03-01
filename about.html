@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Interactive Scrapbook</title>
+    <title>Scrapbook</title>
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link rel="stylesheet" type="text/css" href="style/nav.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -9,6 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ed25ae06d4.js" crossorigin="anonymous"></script>
     <style>
+      html, body{
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
       /* Global layout: two columns using Flexbox */
       .container {
         margin: 0;
@@ -53,6 +57,43 @@
         width: auto;
         height: auto;
         pointer-events: none; /* Allow clicks to pass through images */
+
+      }
+
+      @media (max-width: 1000px) {
+        .container {
+          flex-direction: column;
+        }
+        .text-box {
+          width: 100%;
+          border-right: none;
+          border-bottom: 1px solid #ccc;
+          height: 30vh;
+          overflow: scroll;
+        }
+
+        .instructions {
+          background-color: #fdf3dd;
+          position: sticky;
+          top: 0;
+        }
+
+        .text-box h2 {
+          font-size: 2.5rem;
+          position: sticky;
+        }
+
+        .text-box h4 {
+          font-size: 1.8rem;
+          font-weight: lighter;
+        }
+
+        .text-box p {
+          font-size: 1.5px;
+          text-align: left;
+          text-wrap: wrap;
+        }
+
       }
     </style>
     </head>
@@ -71,8 +112,10 @@
         <main>
           <div class="container">
           <div class="text-box" id="textBox">
-            <h2>Scrapbook</h2>
-            <h4>Click anywhere on the canvas to make a scrapbook with me!</h4>
+            <div class="instructions">
+              <h2>Scrapbook</h2>
+              <h4>Click anywhere on the canvas to make a scrapbook with me!</h4>
+            </div>
           </div>
           <div class="canvas" id="canvas">
           </div>
@@ -100,11 +143,11 @@
             { src: "resources/scrapbook/drums.png", text: "Recently, I've started learning the drums. I'm nowhere near good enough to perform, but it's incredibly fun nonetheless." },
             { src: "resources/scrapbook/eiffel.png", text: "Recently, I've been learning French as some of my closest friends are from there. It's quite a beautiful language!" },
             { src: "resources/scrapbook/fish.png", text: "Born on March 16, I'm actually a Pisces so I don't relate to most of what's said about us fishes." },
-            { src: "resources/scrapbook/flowers.png", text: "Pressed flowers in books, fresh blooms in a vase—I love the way flowers bring quiet beauty to life!" },
+            { src: "resources/scrapbook/flowers.png", text: "This website was my first ever, made with pure html and css. I'm pretty proud of it!" },
             { src: "resources/scrapbook/gear.png", text: "One of my favourite shows right now is Arcane. It's got an incredible, powerful and character-driven storyline, aand the steampunk aesthetic is so cool!" },
             { src: "resources/scrapbook/guitar.png", text: "I have been learning to play the electric guitar for a few years now!" },
             { src: "resources/scrapbook/lily.png", text: "I was born in Bangladesh and like to visit every few years or so! It's a pretty country!" },
-            { src: "resources/scrapbook/mic.png", text: "Ever since I was a little girl, I've alwasy loved to sing!" },
+            { src: "resources/scrapbook/mic.png", text: "Ever since I was a little girl, I've always loved to sing!" },
             { src: "resources/scrapbook/note.png", text: "Music has always been a part of my life! However, I still don't know how to read notes!" },
             { src: "resources/scrapbook/paint.png", text: "I really enjoying digital art, and other forms of non-traditional art like scrapbooking, but also want to learn traditional art one day!" },
             { src: "resources/scrapbook/pearl.png", text: "More than gems or anything of the sort, I can find endless beauty in pearls. They remind me that there's beauty in imperfection." },
@@ -112,12 +155,12 @@
             { src: "resources/scrapbook/saturn.png", text: "My very first dream when I was young was to be an astronaut." },
             { src: "resources/scrapbook/ship.png", text: "My dad is a sailor and I spent over 5 years of my life sailing with him and my family. It was a life changing experience!" },
             { src: "resources/scrapbook/stamp.png", text: "Stamps tell stories of places far and wide. One day, I want a collection full of my own travels." },
-            { src: "resources/scrapbook/star2.png", text: "I’ve always been drawn to the stars. There's something comforting about looking up and knowing they’ve always been there." },
+            { src: "resources/scrapbook/star2.png", text: "I have always been drawn to the stars. There's something comforting about looking up and knowing they’ve always been there." },
             { src: "resources/scrapbook/stars.png", text: "Maybe one day, I'll attempt to realise my dreams of being an astronaut!" },
-            { src: "resources/scrapbook/sun.png", text: "I love jewellery and aprkly trinkets and you'll probably always see me with infinitely many rings on my fingers!" },
-            { src: "resources/scrapbook/teddy.png", text: "I love cute things like teddy bears and cats!" },
-            { src: "resources/scrapbook/tix.png", text: "My biggest desire is travelling; I want to see all the world and all the wonderful things it has to offer!" },
-            { src: "resources/scrapbook/tulip.png", text: "Tulips are one of my favourite flowers, because I like bright, pretty, simple things!" },
+            { src: "resources/scrapbook/sun.png", text: "I love jewellery and sparkly trinkets and you'll probably always see me with infinitely many rings on my fingers!" },
+            { src: "resources/scrapbook/teddy.png", text: "I like to incorporate art (in its many forms) into my coding!" },
+            { src: "resources/scrapbook/tix.png", text: "My biggest wish is to travel; I want to see all the world and all the wonderful things it has to offer!" },
+            { src: "resources/scrapbook/tulip.png", text: "I really enjoy web development, because I like to create pretty, simple things that others will enjoy!" },
             { src: "resources/scrapbook/water.png", text: "I like to keep healthy and eating and drinking well is important to me!" }
             ];
 
@@ -164,11 +207,11 @@
                 const para = document.createElement('p');
                 para.textContent = `${randomItem.text}`;
                 // Insert new text below the header (prepending so previous text moves down)
-                textBox.insertBefore(para, textBox.children[2]);
+                textBox.insertBefore(para, textBox.children[1]);
             });
         </script>
         <footer>
-          <p>© 2025 Raeeda Ibnat Hossain. All rights reserved.</p>
+          <p>&copy; 2025 Raeeda Ibnat Hossain. All rights reserved.</p>
       </footer>
     </body>
 </html>

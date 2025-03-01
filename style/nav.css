@@ -4,7 +4,6 @@ html, body {
     font-family: "Marcellus", serif;
     background-color: #fdf3dd;
     color: #7d0600;
-    width: 100%;
     max-width: none;
 }
 /* Hide checkbox */
@@ -37,6 +36,7 @@ html, body {
 /* Mobile styles */
 @media (max-width: 1000px) {
     .menu-icon {
+        font-size: 3rem;
         color: #7d0600;
         display: block; /* Show the menu icon */
         padding: 0.5em 1em;
@@ -51,7 +51,8 @@ html, body {
         flex-direction: column;;
         top: 4em;
         left: 0;
-        width: 100%;
+        font-size: 2.5rem;
+        width: 100vw;
         background-color: #7d0600;
         text-align: center;
         padding: 1em 0;
