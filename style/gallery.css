@@ -46,18 +46,15 @@
 }
 
 .viktordescription {
-    font-size: 0.9rem; /* Reduce font size */
+    font-size: 0.55rem; /* Reduce font size */
     padding: 2em;
     text-wrap: wrap;
     max-width: 400px;
-    text-align: justify;
+    text-align: left;
 }
 
-span {
-    font-weight: bold;
-}
 
-@media (min-width:320px) {
+@media only screen and (max-device-width: 480px) {
     .viktor-container {
         margin: auto;
     }

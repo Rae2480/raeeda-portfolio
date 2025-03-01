@@ -60,7 +60,7 @@
 
       }
 
-      @media (min-width:320px) {
+      @media only screen and (max-device-width: 480px) {
         .container {
           flex-direction: column;
         }
@@ -78,13 +78,13 @@
           top: 0;
         }
 
-        .text-box h2 {
-          font-size: 2.5rem;
+        .text-box h1 {
+          font-size: 3rem;
           position: sticky;
         }
 
-        .text-box h4 {
-          font-size: 1.8rem;
+        .text-box h3 {
+          font-size: 2rem;
           font-weight: lighter;
         }
 
@@ -113,8 +113,8 @@
           <div class="container">
           <div class="text-box" id="textBox">
             <div class="instructions">
-              <h2>Scrapbook</h2>
-              <h4>Click anywhere on the canvas to make a scrapbook with me!</h4>
+              <h1>Scrapbook</h1>
+              <h3>Click anywhere on the canvas to make a scrapbook with me!</h3>
             </div>
           </div>
           <div class="canvas" id="canvas">
